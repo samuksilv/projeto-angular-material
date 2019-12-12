@@ -48,6 +48,7 @@ msbuild.wrn
 
 # dependencies
 /node_modules
+*/node_modules
 
 # profiling files
 chrome-profiler-events*.json
