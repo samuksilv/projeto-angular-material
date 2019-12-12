@@ -1,6 +1,22 @@
 version: '3'
 
+networks: 
+    portal-network:
+        driver: bridge
+
+volumes:
+    db-data-volume:
+
 services:
+
+    db-sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+        ports: 
+            - "11433:1433"
+        volumes: 
+            - db-data-volume:/database/sqlserver/
+        env_file: .env
+
     portal-api:
         image: portal-api
         build:
@@ -23,18 +39,3 @@ services:
             - portal-network
         depends_on: 
             - portal-api
-
-    db-sqlserver:
-        image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
-        ports: 
-            - "11433:1433"
-        volumes: 
-            - db-data-volume:/database/sqlserver/
-        env_file: .env
-
-networks: 
-    portal-network:
-        driver: bridge
-
-volumes:
-    db-data-volume:
