@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    portal-api:
+        image: portal-api
+        build:
+            context: ./api/
+        ports:
+            - "80:80"
+        networks:
+        - portal-network
+
+networks: 
+    portal-network:
+        driver: bridge
