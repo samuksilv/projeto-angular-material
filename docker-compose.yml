@@ -6,9 +6,20 @@ services:
         build:
             context: ./api/
         ports:
+            - "5001:80"
+        networks:
+            - portal-network
+
+    portal-frontend:
+        image: portal-frontend
+        build:
+            context: ./frontend/
+        ports:
             - "80:80"
         networks:
-        - portal-network
+            - portal-network
+        depends_on: 
+            - portal-api
 
 networks: 
     portal-network:
