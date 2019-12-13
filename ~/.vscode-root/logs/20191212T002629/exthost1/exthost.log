@@ -1,0 +1,30 @@
+[2019-12-11 23:26:32.165] [exthost] [info] extension host started
+[2019-12-11 23:26:32.193] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2019-12-11 23:26:32.193] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-12-11 23:26:32.197] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2019-12-11 23:26:32.197] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-12-11 23:26:32.216] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2019-12-11 23:26:32.216] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2019-12-11 23:26:32.251] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2019-12-11 23:26:32.252] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-12-11 23:26:32.254] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":true,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"*"}
+[2019-12-11 23:26:32.254] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/eamodio.gitlens-10.2.0/dist/extension
+[2019-12-11 23:26:32.299] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag {"startup":true,"extensionId":{"value":"formulahendry.auto-close-tag","_lower":"formulahendry.auto-close-tag"},"activationEvent":"*"}
+[2019-12-11 23:26:32.299] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/formulahendry.auto-close-tag-0.5.6/out/src/extension
+[2019-12-11 23:26:32.300] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag {"startup":true,"extensionId":{"value":"formulahendry.auto-rename-tag","_lower":"formulahendry.auto-rename-tag"},"activationEvent":"*"}
+[2019-12-11 23:26:32.300] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/formulahendry.auto-rename-tag-0.1.1/out/src/extension
+[2019-12-11 23:26:32.302] [exthost] [info] ExtensionService#_doActivateExtension Gruntfuggly.todo-tree {"startup":true,"extensionId":{"value":"Gruntfuggly.todo-tree","_lower":"gruntfuggly.todo-tree"},"activationEvent":"*"}
+[2019-12-11 23:26:32.302] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/gruntfuggly.todo-tree-0.0.162/extension
+[2019-12-11 23:26:32.458] [exthost] [info] ExtensionService#_doActivateExtension joelday.docthis {"startup":true,"extensionId":{"value":"joelday.docthis","_lower":"joelday.docthis"},"activationEvent":"*"}
+[2019-12-11 23:26:32.458] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/joelday.docthis-0.7.1/out/src/extension
+[2019-12-11 23:26:32.580] [exthost] [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare {"startup":true,"extensionId":{"value":"ms-vsliveshare.vsliveshare","_lower":"ms-vsliveshare.vsliveshare"},"activationEvent":"*"}
+[2019-12-11 23:26:32.580] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.1375/out/prod/extension-prod
+[2019-12-11 23:26:32.776] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme {"startup":true,"extensionId":{"value":"PKief.material-icon-theme","_lower":"pkief.material-icon-theme"},"activationEvent":"*"}
+[2019-12-11 23:26:32.776] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/pkief.material-icon-theme-3.9.2/dist/extension
+[2019-12-11 23:26:32.786] [exthost] [info] ExtensionService#_doActivateExtension wayou.vscode-todo-highlight {"startup":true,"extensionId":{"value":"wayou.vscode-todo-highlight","_lower":"wayou.vscode-todo-highlight"},"activationEvent":"*"}
+[2019-12-11 23:26:32.786] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/wayou.vscode-todo-highlight-1.0.4/src/extension
+[2019-12-11 23:26:32.994] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.csharp {"startup":true,"extensionId":{"value":"ms-vscode.csharp","_lower":"ms-vscode.csharp"},"activationEvent":"workspaceContains:*.csproj,*.sln,*.csx,*.cake,**/*.csproj,**/*.sln,**/*.csx,**/*.cake"}
+[2019-12-11 23:26:32.994] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/dist/extension
+[2019-12-11 23:26:33.191] [exthost] [info] eager extensions activated
+[2019-12-11 23:26:33.966] [exthost] [info] ExtensionService#_doActivateExtension ms-azuretools.vscode-docker {"startup":false,"extensionId":{"value":"ms-azuretools.vscode-docker","_lower":"ms-azuretools.vscode-docker"},"activationEvent":"onLanguage:yaml"}
+[2019-12-11 23:26:33.966] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/samuel/.vscode/extensions/ms-azuretools.vscode-docker-0.9.0/main

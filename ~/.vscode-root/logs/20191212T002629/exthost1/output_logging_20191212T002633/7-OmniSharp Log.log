@@ -1,0 +1,51 @@
+Starting OmniSharp server at 12/12/2019 00:26:33
+    Target: /home/samuel/Desktop/projects/VACP-project/api/Portal.Api.sln
+
+OmniSharp server started.
+    Path: /home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/run
+    PID: 28940
+
+[info]: OmniSharp.Stdio.Host
+        Starting OmniSharp on linuxmint 19.1 (x64)
+[info]: OmniSharp.Services.DotNetCliService
+        DotNetPath set to dotnet
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Located 1 MSBuild instance(s)
+            1: StandAlone 16.3 - "/home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild/Current/Bin"
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        MSBUILD_EXE_PATH environment variable set to '/home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild/Current/Bin/MSBuild.dll'
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Registered MSBuild instance: StandAlone 16.3 - "/home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild/Current/Bin"
+            CscToolExe = csc.exe
+            MSBuildToolsPath = /home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild/Current/Bin
+            CscToolPath = /home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild/Current/Bin/Roslyn
+            BypassFrameworkInstallChecks = true
+            MSBuildExtensionsPath = /home/samuel/.vscode/extensions/ms-vscode.csharp-1.21.8/.omnisharp/1.34.8/omnisharp/.msbuild
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Detecting Cake files in '/home/samuel/Desktop/projects/VACP-project/api'.
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Could not find any Cake files
+[info]: OmniSharp.MSBuild.ProjectSystem
+        Detecting projects in '/home/samuel/Desktop/projects/VACP-project/api/Portal.Api.sln'.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/home/samuel/Desktop/projects/VACP-project/api/Portal.Api/Portal.Api.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/home/samuel/Desktop/projects/VACP-project/api/Portal.Domain/Portal.Domain.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/home/samuel/Desktop/projects/VACP-project/api/Portal.Infra/Portal.Infra.csproj'
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Detecting CSX files in '/home/samuel/Desktop/projects/VACP-project/api'.
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Could not find any CSX files
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.CSharpFormattingWorkspaceOptionsProvider, Order: 0
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /home/samuel/Desktop/projects/VACP-project/api/Portal.Api/Portal.Api.csproj
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.RenameWorkspaceOptionsProvider, Order: 100
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.EditorConfigWorkspaceOptionsProvider, Order: 200
+[info]: OmniSharp.WorkspaceInitializer
+        Configuration finished.
+[info]: OmniSharp.Stdio.Host
+        Omnisharp server running using Stdio at location '/home/samuel/Desktop/projects/VACP-project/api' on host 28822.
