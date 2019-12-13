@@ -31,8 +31,7 @@ namespace Portal.Api
 
             services.AddDbContext<AppDbContext>(options =>
             {
-                // options.UseSqlServer(Environment.GetEnvironmentVariable("APP_DB_CONNECTION"),
-                options.UseSqlServer("Server=localhost;Database=myDataBase;User Id=sa;Password=Sqlserver2019;",
+                options.UseSqlServer(Environment.GetEnvironmentVariable("APP_DB_CONNECTION"),
                 opt =>
                 {
                     opt.MaxBatchSize(1000);
