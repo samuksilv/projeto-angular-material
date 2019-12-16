@@ -8,6 +8,7 @@ WORKDIR /src
 COPY ["Portal.Api/Portal.Api.csproj", "Portal.Api/"]
 COPY ["Portal.Domain/Portal.Domain.csproj", "Portal.Domain/"]
 COPY ["Portal.Infra/Portal.Infra.csproj", "Portal.Infra/"]
+COPY ["Portal.CrossCutting/Portal.CrossCutting.csproj", "Portal.CrossCutting/"]
 RUN dotnet restore "Portal.Api/Portal.Api.csproj"
 COPY . .
 WORKDIR "/src/Portal.Api"
