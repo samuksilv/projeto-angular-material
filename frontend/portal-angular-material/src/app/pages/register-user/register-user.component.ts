@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register-user',
@@ -15,9 +15,20 @@ import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@ang
 })
 export class RegisterUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  userProfileForm: FormGroup;
 
   ngOnInit() {
+
+    this.userProfileForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+    });
   }
 
 }

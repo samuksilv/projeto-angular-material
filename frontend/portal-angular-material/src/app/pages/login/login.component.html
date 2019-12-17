@@ -15,20 +15,20 @@
             </mat-card-header>
 
             <mat-card-content>
-                <form>
-                    <div class="input-forms">
+                <form [formGroup]="userLoginForm">
+                    <div class="forms">
                         <div>
                             <mat-form-field appearance="outline">
                                 <mat-label>E-mail</mat-label>
-                                <input matInput placeholder="Digite seu E-mail">
-                                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                                <input formControlName="email" matInput type="email" placeholder="Digite seu E-mail">
+                                <mat-error *ngIf="userLoginForm?.get('email')?.invalid">Insira um email válido</mat-error>
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field appearance="outline">
                                 <mat-label>Senha</mat-label>
-                                <input matInput placeholder="Digite sua Senha">
-                                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                                <input formControlName="password" type="password" matInput placeholder="Digite sua Senha">
+                                <mat-error *ngIf="userLoginForm?.get('password')?.invalid">Insira sua senha</mat-error>
                             </mat-form-field>
                         </div>
                     </div>

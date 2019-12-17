@@ -1,5 +1,6 @@
 <div class="bg-image">
     <div class="container">
+
         <div class="container-content">
             <div class="container-title">
                 <h1>
@@ -7,49 +8,52 @@
                     <mat-icon aria-hidden="false">account_box</mat-icon>
 
                 </h1>
-
             </div>
 
             <mat-divider></mat-divider>
 
-            <form>
+            <form [formGroup]="userProfileForm">
                 <div class="forms">
                     <mat-form-field appearance="outline">
                         <mat-label>Nome</mat-label>
-                        <input matInput placeholder="Digite seu Nome">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input matInput formControlName="firstName" placeholder="Digite seu Nome">
+                        <mat-error *ngIf="userProfileForm?.get('firstName')?.invalid">Insira um valor válido</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Sobrenome</mat-label>
-                        <input matInput placeholder="Digite seu Sobrenome">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input matInput formControlName="lastName" placeholder="Digite seu Sobrenome">
+                        <mat-error *ngIf="userProfileForm?.get('lastName')?.invalid">Insira um valor válido</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Data de nascimento</mat-label>
-                        <input matInput [matDatepicker]="picker" placeholder="Data de nascimento">
+                        <input matInput formControlName="birthDate" [matDatepicker]="picker"
+                            placeholder="Data de nascimento">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="userProfileForm?.get('birthDate')?.invalid">Insira um valor válido</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>E-mail</mat-label>
-                        <input matInput placeholder="Digite seu E-mail">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input type="email" formControlName="email" matInput placeholder="Digite seu E-mail">
+                        <mat-error *ngIf="userProfileForm?.get('email')?.invalid">Insira um valor válido</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Senha</mat-label>
-                        <input matInput placeholder="Digite sua Senha">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input type="password" formControlName="password" matInput placeholder="Digite sua Senha">
+                        <mat-error *ngIf="userProfileForm?.get('password')?.invalid">Insira um valor válido</mat-error>
                     </mat-form-field>
-
 
                     <mat-form-field appearance="outline">
                         <mat-label>Confirmar Senha</mat-label>
-                        <input matInput placeholder="Confirmação da Senha">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input type="password" formControlName="confirmPassword" matInput
+                            placeholder="Confirmação da Senha">
+                        <mat-error *ngIf="userProfileForm?.get('confirmPassword')?.invalid">Insira um valor válido
+                        </mat-error>
+
                     </mat-form-field>
                 </div>
 
@@ -58,10 +62,10 @@
                         <button mat-raised-button color="primary">Salvar</button>
                     </div>
                     <div>
-                        <button mat-raised-button type="reset" >Limpar</button>
+                        <button mat-raised-button type="reset">Limpar</button>
                     </div>
                     <div>
-                        <button mat-raised-button color="warn" routerLink="/" >Cancelar</button>
+                        <button mat-raised-button color="warn" routerLink="/">Cancelar</button>
                     </div>
                 </div>
 

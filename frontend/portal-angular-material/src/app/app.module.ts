@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,6 +48,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { HomeComponent } from './pages/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 registerLocaleData(ptBr);
 
@@ -56,9 +58,11 @@ registerLocaleData(ptBr);
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    HomeComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -105,7 +109,7 @@ registerLocaleData(ptBr);
     PortalModule,
     ScrollingModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-br' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
