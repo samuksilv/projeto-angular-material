@@ -35,7 +35,7 @@ namespace Portal.Infra.Database.Contants.Queries {
         public static string CountWithFilter (string description) {
 
             if (string.IsNullOrEmpty (description))
-                return @"SELECT COUNT(*) FROM {TableConstants.SegmentTable}";
+                return $@"SELECT COUNT(*) FROM {TableConstants.SegmentTable}";
             else
                 return $@"
                     SELECT COUNT(*) FROM {TableConstants.SegmentTable}
