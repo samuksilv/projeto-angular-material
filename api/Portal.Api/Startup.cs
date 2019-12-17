@@ -70,6 +70,17 @@ namespace Portal.Api {
             RepositoryDependencyInjection.ConfigureServices (services);
             BusinessLogicDependencyInjection.ConfigureServices (services);
 
+            services.AddCors (options => {
+                options.AddPolicy ("AllowAll",
+                    builder => {
+                        builder
+                            .AllowAnyOrigin ()
+                            .AllowAnyMethod ()
+                            .AllowAnyHeader ()
+                            .AllowCredentials ();
+                    });
+            });
+
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_2);
         }
 
@@ -83,6 +94,9 @@ namespace Portal.Api {
             app.UseAuthentication ();
 
             app.UseHttpsRedirection ();
+
+            app.UseCors ("AllowAll");
+
             app.UseMvc ();
             app.UseApiVersioning ();
 

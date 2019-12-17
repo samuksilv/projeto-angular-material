@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserRequest } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-user',
@@ -15,11 +18,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterUserComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router,
+  ) { }
 
   userProfileForm: FormGroup;
 
   ngOnInit() {
+
 
     this.userProfileForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -29,6 +37,23 @@ export class RegisterUserComponent implements OnInit {
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
     });
+  }
+
+  registerUser() {
+    if (this.userProfileForm.valid) {
+      let request: UserRequest = <UserRequest>this.userProfileForm.value;
+
+      this.userService.registerUser(request).subscribe(
+        (data) => {
+
+        },
+        (error) => console.error,
+        () => {
+          this.router.navigate(['/home']);
+        }
+      )
+
+    }
   }
 
 }

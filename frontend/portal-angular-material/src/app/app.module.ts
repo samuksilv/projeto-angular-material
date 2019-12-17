@@ -50,6 +50,7 @@ import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { HomeComponent } from './pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 registerLocaleData(ptBr);
@@ -64,6 +65,7 @@ registerLocaleData(ptBr);
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,

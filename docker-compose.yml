@@ -1,0 +1,45 @@
+version: "3"
+
+networks:
+    portal-network:
+        driver: bridge
+
+volumes:
+    db-data-volume:
+
+services:
+    db-sqlserver:
+        container_name: db-sqlserver
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        ports:
+            - "1433:1433"
+        volumes:
+            - db-data-volume:/var/opt/mssql
+        env_file: .env
+        networks:
+            - portal-network
+
+    portal-api:
+        container_name: portal-api
+        image: portal-api
+        build:
+            context: ./api/
+        ports:
+            - "5001:80"
+        env_file: .env
+        networks:
+            - portal-network
+        depends_on:
+            - db-sqlserver
+
+    portal-frontend:
+        container_name: portal-frontend
+        image: portal-frontend
+        build:
+            context: ./frontend/
+        ports:
+            - "80:80"
+        networks:
+            - portal-network
+        depends_on:
+            - portal-api
