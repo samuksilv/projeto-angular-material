@@ -18,6 +18,8 @@ using Portal.CrossCutting.DependeceInjection;
 using Portal.Domain.Configurations;
 using Portal.Domain.Models;
 using Portal.Infra.Database.Contexts;
+using Swashbuckle.AspNetCore.Filters;
+using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
@@ -30,37 +32,45 @@ namespace Portal.Api {
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices (IServiceCollection services)
-        {
+        public void ConfigureServices (IServiceCollection services) {
 
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(DabaseConnectionConfiguration.ConnectionString,
-                    opt =>
-                    {
-                        opt.MaxBatchSize(1000);
+            services.AddDbContext<AppDbContext> (options => {
+                options.UseSqlServer (DabaseConnectionConfiguration.ConnectionString,
+                    opt => {
+                        opt.MaxBatchSize (1000);
                     });
 
             });
 
-            ConfigureAPIVersioning(services);
+            ConfigureAPIVersioning (services);
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1",
-                    new Swashbuckle.AspNetCore.Swagger.Info
-                    {
+            services.AddSwaggerGen (c => {
+                c.SwaggerDoc ("v1",
+                    new Swashbuckle.AspNetCore.Swagger.Info {
                         Version = "v1",
-                        Title = "Portal API",
+                            Title = "Portal API",
                     });
+
+                c.AddSecurityDefinition (
+                    "Bearer",
+                    new ApiKeyScheme {
+                        In = "header",
+                            Description = "Autenticação baseada em Json Web Token (JWT)",
+                            Name = "Authorization",
+                            Type = "apiKey",
+
+                    });
+
+                c.AddSecurityRequirement (new Dictionary<string, IEnumerable<string>> { { "Bearer", new string[] { } } });
+
             });
 
-            ConfigureAuthentication(services);
+            ConfigureAuthentication (services);
 
-            RepositoryDependencyInjection.ConfigureServices(services);
-            BusinessLogicDependencyInjection.ConfigureServices(services);
-        
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            RepositoryDependencyInjection.ConfigureServices (services);
+            BusinessLogicDependencyInjection.ConfigureServices (services);
+
+            services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_2);
         }
 
         public void Configure (IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider ApiVersionProvider) {
@@ -70,6 +80,7 @@ namespace Portal.Api {
             } else {
                 app.UseHsts ();
             }
+            app.UseAuthentication ();
 
             app.UseHttpsRedirection ();
             app.UseMvc ();
@@ -80,34 +91,28 @@ namespace Portal.Api {
             InitializeDatabase (app);
         }
 
-        private static void ConfigureAPIVersioning(IServiceCollection services)
-        {
-            services.AddApiVersioning(p =>
-            {
-                p.DefaultApiVersion = new ApiVersion(1, 0);
+        private static void ConfigureAPIVersioning (IServiceCollection services) {
+            services.AddApiVersioning (p => {
+                p.DefaultApiVersion = new ApiVersion (1, 0);
                 p.ReportApiVersions = true;
                 p.AssumeDefaultVersionWhenUnspecified = true;
             });
 
-            services.AddVersionedApiExplorer(p =>
-            {
+            services.AddVersionedApiExplorer (p => {
                 p.GroupNameFormat = "'v'VVV";
                 p.SubstituteApiVersionInUrl = true;
             });
         }
 
-        private static void ConfigureAuthentication(IServiceCollection services)
-        {
-            var signingConfiguration = new SigningConfiguration();
+        private static void ConfigureAuthentication (IServiceCollection services) {
+            var signingConfiguration = new SigningConfiguration ();
 
-            services.AddSingleton(signingConfiguration);
+            services.AddSingleton (signingConfiguration);
 
-            services.AddAuthentication(authOpt =>
-            {
+            services.AddAuthentication (authOpt => {
                 authOpt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 authOpt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(bearerOptions =>
-            {
+            }).AddJwtBearer (bearerOptions => {
                 bearerOptions.TokenValidationParameters.IssuerSigningKey = signingConfiguration.Key;
 
                 bearerOptions.TokenValidationParameters.ValidAudience = TokenConfiguration.Audience;
@@ -121,11 +126,10 @@ namespace Portal.Api {
                 bearerOptions.TokenValidationParameters.ClockSkew = TimeSpan.Zero;
             });
 
-            services.AddAuthorization(auth =>
-            {
-                auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
-                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                    .RequireAuthenticatedUser().Build());
+            services.AddAuthorization (auth => {
+                auth.AddPolicy ("Bearer", new AuthorizationPolicyBuilder ()
+                    .AddAuthenticationSchemes (JwtBearerDefaults.AuthenticationScheme)
+                    .RequireAuthenticatedUser ().Build ());
             });
         }
 
