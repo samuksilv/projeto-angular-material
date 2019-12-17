@@ -16,7 +16,7 @@ namespace Portal.Infra.Database.Constants.Queries {
             AND {nameof(User.Password)} = @Password";
 
         public static readonly string GetUserById = $@"
-            SELECT * FROM {SchemasConstants.DboSchema}.{TableConstants.UserTable}
+            SELECT TOP 1 * FROM {SchemasConstants.DboSchema}.{TableConstants.UserTable}
             WHERE  { nameof(User.Id)} = @Id";
 
     }

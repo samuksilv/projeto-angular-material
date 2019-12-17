@@ -19,10 +19,11 @@ namespace Portal.Api.Controllers {
         }
 
         [HttpPost ("register")]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterAsync ([FromBody] UserRegisterRequest request) {
             var response = await _userService.RegisterAsync (request);
 
-            return Created( response.Id.ToString(), response );
+            return Created (response.Id.ToString (), response);
         }
 
         [HttpGet ("{id}")]
@@ -34,6 +35,7 @@ namespace Portal.Api.Controllers {
         }
 
         [HttpPost ("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginAsync ([FromBody] UserLoginRequest request) {
             var response = await _userService.LoginAsync (request);
 

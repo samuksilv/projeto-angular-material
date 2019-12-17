@@ -7,6 +7,7 @@ namespace Portal.CrossCutting.DependeceInjection {
         public static void ConfigureServices (IServiceCollection services) {
 
             services.AddScoped<IUserService, UserService> ();
+            services.AddScoped<ISegmentService, SegmentService> ();
 
         }
     }

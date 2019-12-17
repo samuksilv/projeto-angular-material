@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Portal.Domain.Dtos.Request;
 
 namespace Portal.Domain.Models {
     /// <summary>
@@ -17,5 +19,11 @@ namespace Portal.Domain.Models {
         /// <value></value>
         public List<Company> Companies { get; set; }
 
+        public static explicit operator Segment(SegmentCreateUpdateRequest request)
+        {
+            return new Segment{
+                Description = request.Description
+            };
+        }
     }
 }
