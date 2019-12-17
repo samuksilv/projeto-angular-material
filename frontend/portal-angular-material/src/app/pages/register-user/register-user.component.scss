@@ -1,0 +1,65 @@
+.container {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  width: 100%;
+  height: calc(100vh - 18%);
+  max-height: 100vh;
+  border-radius: 15px;
+
+  .container-title {
+    width: 100%;
+  }
+
+  .container-content {
+    margin: 0 5%;
+    padding-top: 5%;
+    width: 100%;
+    height: 100%;
+  }
+
+  form {
+    margin: 3% 0;
+    width: 100%;
+
+    div.forms {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      width: 100%;
+      margin-bottom: 5%;
+      .mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.bg-image {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-size: cover;
+  background-image: url("/assets/images/background-login.jpg");
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+
+  button {
+    margin: 5px;
+    width: 150px;
+  }
+}
+
+.material-icons {
+  font-size: 36px;
+  vertical-align: sub;
+}

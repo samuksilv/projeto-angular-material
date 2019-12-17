@@ -1,0 +1,73 @@
+<div class="bg-image">
+    <div class="container">
+        <div class="container-content">
+            <div class="container-title">
+                <h1>
+                    Crie sua conta
+                    <mat-icon aria-hidden="false">account_box</mat-icon>
+
+                </h1>
+
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <form>
+                <div class="forms">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input matInput placeholder="Digite seu Nome">
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Sobrenome</mat-label>
+                        <input matInput placeholder="Digite seu Sobrenome">
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Data de nascimento</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="Data de nascimento">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="Digite seu E-mail">
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input matInput placeholder="Digite sua Senha">
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirmar Senha</mat-label>
+                        <input matInput placeholder="Confirmação da Senha">
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+                </div>
+
+                <div class="buttons">
+                    <div>
+                        <button mat-raised-button color="primary">Salvar</button>
+                    </div>
+                    <div>
+                        <button mat-raised-button type="reset" >Limpar</button>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="warn" routerLink="/" >Cancelar</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

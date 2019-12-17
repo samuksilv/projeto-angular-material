@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card">
+        <mat-card class="content-card">
+
+            <div class="image-center">
+                <img mat-card-image src="../../../assets/images/angular-logo.png" alt="logo">
+            </div>
+
+            <mat-card-header class="card-header-title">
+                <mat-card-title>
+                    <h2>
+                        Portal Angular Material
+                    </h2>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form>
+                    <div class="input-forms">
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>E-mail</mat-label>
+                                <input matInput placeholder="Digite seu E-mail">
+                                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Senha</mat-label>
+                                <input matInput placeholder="Digite sua Senha">
+                                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+            <mat-card-actions class="buttons">
+                <button mat-raised-button color="primary">Login</button>
+                <button mat-raised-button color="primary" routerLink="/register">Registrar-se</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

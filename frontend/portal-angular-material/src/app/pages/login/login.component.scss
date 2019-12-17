@@ -1,0 +1,62 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-size: cover;
+  background-image: url("/assets/images/background-login.jpg");
+}
+
+.card {
+  margin-top: 5vh;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  max-width: 500px;
+  padding: 20px;
+}
+
+mat-card-actions{
+    padding: 10px;
+}
+
+.content-card {
+  height: 100%;
+  padding: 50px;
+}
+
+.input-forms {
+  widows: 100%;
+  mat-form-field,
+  input,
+  div {
+    width: 100%;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 120px;
+  }
+}
+
+.image-center {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 300px;
+}
+
+.card-header-title {
+  justify-content: center;
+}
+
+.mat-card-content{
+    margin-top: 20px;
+}
